@@ -17,7 +17,6 @@
 		CE8360881A81310900AB230F /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8360871A81310900AB230F /* FeedTableViewController.swift */; };
 		CE83608A1A81314700AB230F /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8360891A81314700AB230F /* MyFeedViewController.swift */; };
 		CE83608C1A8151F600AB230F /* NewSeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83608B1A8151F600AB230F /* NewSeatViewController.swift */; };
-		CE8360941A8154A800AB230F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE83608F1A8154A800AB230F /* Parse.framework */; };
 		CE8360951A8154A800AB230F /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360901A8154A800AB230F /* ParseCrashReporting.framework */; };
 		CE8360961A8154A800AB230F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360911A8154A800AB230F /* ParseFacebookUtils.framework */; };
 		CE8360971A8154A800AB230F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360921A8154A800AB230F /* ParseUI.framework */; };
@@ -26,6 +25,11 @@
 		CE8360A21A81577500AB230F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360A11A81577500AB230F /* libsqlite3.dylib */; };
 		CE8360A51A815B7400AB230F /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8360A41A815B7400AB230F /* FeedData.swift */; };
 		CE8360A71A815F3900AB230F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360A61A815F3900AB230F /* MobileCoreServices.framework */; };
+		CEBA31C71A83B3F900888D20 /* FeedCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA31C61A83B3F900888D20 /* FeedCellTableViewCell.swift */; };
+		CEBA31C81A83B84A00888D20 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE83608F1A8154A800AB230F /* Parse.framework */; };
+		CEBA31CA1A83CF4D00888D20 /* FourSquareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA31C91A83CF4D00888D20 /* FourSquareRequest.swift */; };
+		CEBA31CC1A83CFB100888D20 /* VenuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA31CB1A83CFB100888D20 /* VenuesTableViewController.swift */; };
+		CEBA31CE1A83FB0300888D20 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA31CD1A83FB0300888D20 /* MapViewController.swift */; };
 		CEE2F1681A82608A00E6626F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE83608E1A8154A800AB230F /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +71,10 @@
 		CE8360A11A81577500AB230F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CE8360A41A815B7400AB230F /* FeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 		CE8360A61A815F3900AB230F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CEBA31C61A83B3F900888D20 /* FeedCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCellTableViewCell.swift; sourceTree = "<group>"; };
+		CEBA31C91A83CF4D00888D20 /* FourSquareRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareRequest.swift; sourceTree = "<group>"; };
+		CEBA31CB1A83CFB100888D20 /* VenuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewController.swift; sourceTree = "<group>"; };
+		CEBA31CD1A83FB0300888D20 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +83,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8360A71A815F3900AB230F /* MobileCoreServices.framework in Frameworks */,
+				CEBA31C81A83B84A00888D20 /* Parse.framework in Frameworks */,
 				CE8360A21A81577500AB230F /* libsqlite3.dylib in Frameworks */,
 				CE8360A01A81576400AB230F /* SystemConfiguration.framework in Frameworks */,
 				CE83609C1A81571800AB230F /* AudioToolbox.framework in Frameworks */,
-				CE8360941A8154A800AB230F /* Parse.framework in Frameworks */,
 				CE8360951A8154A800AB230F /* ParseCrashReporting.framework in Frameworks */,
 				CEE2F1681A82608A00E6626F /* Bolts.framework in Frameworks */,
 				CE8360971A8154A800AB230F /* ParseUI.framework in Frameworks */,
@@ -162,7 +170,9 @@
 				CE8360641A81101600AB230F /* Main.storyboard */,
 				CE8360871A81310900AB230F /* FeedTableViewController.swift */,
 				CE8360891A81314700AB230F /* MyFeedViewController.swift */,
+				CEBA31C61A83B3F900888D20 /* FeedCellTableViewCell.swift */,
 				CE8360861A81308900AB230F /* New Seat */,
+				CEBA31CD1A83FB0300888D20 /* MapViewController.swift */,
 			);
 			name = "Main Feeds and Login";
 			sourceTree = "<group>";
@@ -172,6 +182,7 @@
 			children = (
 				CE8360821A81171600AB230F /* NewSeat.Storyboard */,
 				CE83608B1A8151F600AB230F /* NewSeatViewController.swift */,
+				CEBA31CB1A83CFB100888D20 /* VenuesTableViewController.swift */,
 			);
 			name = "New Seat";
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 		CE8360A31A815B1D00AB230F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEBA31C91A83CF4D00888D20 /* FourSquareRequest.swift */,
 				CE8360A41A815B7400AB230F /* FeedData.swift */,
 			);
 			name = Models;
@@ -303,12 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBA31CA1A83CF4D00888D20 /* FourSquareRequest.swift in Sources */,
 				CE8360631A81101600AB230F /* LoginViewController.swift in Sources */,
 				CE83608A1A81314700AB230F /* MyFeedViewController.swift in Sources */,
+				CEBA31CE1A83FB0300888D20 /* MapViewController.swift in Sources */,
+				CEBA31C71A83B3F900888D20 /* FeedCellTableViewCell.swift in Sources */,
 				CE8360611A81101600AB230F /* AppDelegate.swift in Sources */,
 				CE8360A51A815B7400AB230F /* FeedData.swift in Sources */,
 				CE83608C1A8151F600AB230F /* NewSeatViewController.swift in Sources */,
 				CE8360881A81310900AB230F /* FeedTableViewController.swift in Sources */,
+				CEBA31CC1A83CFB100888D20 /* VenuesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +462,8 @@
 					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 				);
 				INFOPLIST_FILE = "Sit Fit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,6 +480,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
 					"$(PROJECT_DIR)/Sit",
