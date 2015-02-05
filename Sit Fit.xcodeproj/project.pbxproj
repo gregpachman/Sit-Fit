@@ -17,7 +17,6 @@
 		CE8360881A81310900AB230F /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8360871A81310900AB230F /* FeedTableViewController.swift */; };
 		CE83608A1A81314700AB230F /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8360891A81314700AB230F /* MyFeedViewController.swift */; };
 		CE83608C1A8151F600AB230F /* NewSeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83608B1A8151F600AB230F /* NewSeatViewController.swift */; };
-		CE8360931A8154A800AB230F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE83608E1A8154A800AB230F /* Bolts.framework */; };
 		CE8360941A8154A800AB230F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE83608F1A8154A800AB230F /* Parse.framework */; };
 		CE8360951A8154A800AB230F /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360901A8154A800AB230F /* ParseCrashReporting.framework */; };
 		CE8360961A8154A800AB230F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360911A8154A800AB230F /* ParseFacebookUtils.framework */; };
@@ -27,6 +26,7 @@
 		CE8360A21A81577500AB230F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360A11A81577500AB230F /* libsqlite3.dylib */; };
 		CE8360A51A815B7400AB230F /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8360A41A815B7400AB230F /* FeedData.swift */; };
 		CE8360A71A815F3900AB230F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8360A61A815F3900AB230F /* MobileCoreServices.framework */; };
+		CEE2F1681A82608A00E6626F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE83608E1A8154A800AB230F /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +80,9 @@
 				CE83609C1A81571800AB230F /* AudioToolbox.framework in Frameworks */,
 				CE8360941A8154A800AB230F /* Parse.framework in Frameworks */,
 				CE8360951A8154A800AB230F /* ParseCrashReporting.framework in Frameworks */,
+				CEE2F1681A82608A00E6626F /* Bolts.framework in Frameworks */,
 				CE8360971A8154A800AB230F /* ParseUI.framework in Frameworks */,
 				CE8360961A8154A800AB230F /* ParseFacebookUtils.framework in Frameworks */,
-				CE8360931A8154A800AB230F /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +444,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sit",
 					Fit,
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 				);
 				INFOPLIST_FILE = "Sit Fit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -460,6 +462,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
 				);
@@ -523,6 +527,7 @@
 				CE83607C1A81101600AB230F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE83607D1A81101600AB230F /* Build configuration list for PBXNativeTarget "Sit FitTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +536,7 @@
 				CE83607F1A81101600AB230F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWl-fk-kpJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="W9U-wn-cir"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAc-pW-POl">
                                 <rect key="frame" x="20" y="540" width="270" height="40"/>
                                 <color key="backgroundColor" red="0.84303977269999997" green="0.21443233389999999" blue="0.3146337266" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,20 +63,39 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4v-8t-QnS">
+                                <rect key="frame" x="20" y="240" width="560" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="V0n-hT-PzA"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="1RZ-Wc-m82" eventType="touchUpInside" id="jBI-bE-vpX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tDg-vg-oZO" secondAttribute="trailing" constant="20" id="5dS-MV-E8c"/>
+                            <constraint firstItem="Q4v-8t-QnS" firstAttribute="leading" secondItem="jsx-Dl-4eW" secondAttribute="leading" constant="20" id="6yQ-BK-mim"/>
                             <constraint firstItem="cXG-BL-cx6" firstAttribute="top" secondItem="TXf-ft-2ca" secondAttribute="bottom" constant="20" id="Fdw-gb-bVi"/>
+                            <constraint firstItem="VWl-fk-kpJ" firstAttribute="top" secondItem="jsx-Dl-4eW" secondAttribute="top" id="Nx1-u7-cbV"/>
                             <constraint firstItem="cXG-BL-cx6" firstAttribute="leading" secondItem="jsx-Dl-4eW" secondAttribute="leadingMargin" constant="20" id="Rro-58-5pQ"/>
                             <constraint firstItem="cXG-BL-cx6" firstAttribute="trailing" secondItem="jsx-Dl-4eW" secondAttribute="trailingMargin" id="ZUY-nT-KM2"/>
                             <constraint firstItem="Uao-g1-ObJ" firstAttribute="top" secondItem="gAc-pW-POl" secondAttribute="bottom" constant="20" id="ZsY-57-lgT"/>
+                            <constraint firstAttribute="trailing" secondItem="Q4v-8t-QnS" secondAttribute="trailing" constant="20" id="dMc-3y-e3U"/>
+                            <constraint firstItem="Q4v-8t-QnS" firstAttribute="top" secondItem="jsx-Dl-4eW" secondAttribute="top" constant="240" id="eEM-Pj-mMk"/>
                             <constraint firstItem="cXG-BL-cx6" firstAttribute="leading" secondItem="jsx-Dl-4eW" secondAttribute="leading" constant="20" id="efc-XZ-WAN"/>
+                            <constraint firstAttribute="trailing" secondItem="VWl-fk-kpJ" secondAttribute="trailing" id="ff5-1F-cXV"/>
                             <constraint firstItem="cXG-BL-cx6" firstAttribute="top" secondItem="TXf-ft-2ca" secondAttribute="bottom" constant="20" id="gEw-ca-ePK"/>
                             <constraint firstItem="tDg-vg-oZO" firstAttribute="leading" secondItem="gAc-pW-POl" secondAttribute="trailing" constant="20" id="kW3-j3-uO3"/>
                             <constraint firstItem="gAc-pW-POl" firstAttribute="width" secondItem="tDg-vg-oZO" secondAttribute="width" id="nqA-bj-Bjd"/>
                             <constraint firstAttribute="trailing" secondItem="cXG-BL-cx6" secondAttribute="trailing" constant="26" id="qMw-H0-Jqs"/>
                             <constraint firstItem="Uao-g1-ObJ" firstAttribute="top" secondItem="tDg-vg-oZO" secondAttribute="bottom" constant="20" id="tRj-ju-eOr"/>
+                            <constraint firstItem="VWl-fk-kpJ" firstAttribute="leading" secondItem="jsx-Dl-4eW" secondAttribute="leading" id="w3J-Fd-J8k"/>
                             <constraint firstItem="gAc-pW-POl" firstAttribute="leading" secondItem="jsx-Dl-4eW" secondAttribute="leading" constant="20" id="xzl-8S-aWR"/>
                         </constraints>
                         <variation key="default">
@@ -82,6 +107,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="seatImageView" destination="VWl-fk-kpJ" id="1HR-1Q-Yv8"/>
                         <outlet property="seatNameField" destination="cXG-BL-cx6" id="5jT-os-M67"/>
                     </connections>
                 </viewController>

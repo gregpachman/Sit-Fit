@@ -41,11 +41,102 @@ class LoginViewController: UIViewController {
     }
         @IBAction func loginRegister(sender: AnyObject) {
             
-            isLoggedIn = true
+            //isLoggedIn = true
+            //checkIfLoggedIn()
+        
+        var fieldValues: [String] = [username.text,password.text]
+        
+            if find(fieldValues, "") != nil {
             
-            checkIfLoggedIn()
+            
+            var alertViewController = UIAlertController(title: "You Suck!", message: "All fields must be filled in Idiot!", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            var defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertViewController.addAction(defaultAction)
+            presentViewController(alertViewController, animated: true, completion: nil)
+            
+            
+        } else {
+            
+            println("You are logged in")
+            
+            var userQuery = PFUser.query()
+            
+            userQuery.whereKey("username", equalTo: username.text)
+            userQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                
+                if objects.count > 0 {
+                    
+                    self.login()
+                    
+                }else{
+                    
+                    self.signUp()
+                }
+                
+            })
+            
+            //signUp()
+            
+        }
+        
         
     }
+    
+    func login() {
+        
+        PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+            (user: PFUser!, error: NSError!) -> Void in
+            if user != nil {
+                
+                println("Logged in as \(user)")
+                // Do stuff after successful login.
+                
+                self.isLoggedIn = true
+                self.checkIfLoggedIn()
+                
+            } else {
+                // The login failed. Check error to see why.
+            }
+        }
+    }
+    
+    
+    func signUp() {
+        
+        var user = PFUser()
+        user.username = username.text
+        user.password = password.text
+        //user.email = emailField.text
+        //other fields can be set just like with PFObject
+        //user["phone"] = "415-392-0202"
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool!, error: NSError!) -> Void in
+            if error == nil {
+                
+                println(user)
+                
+                self.username.text = ""
+                self.password.text = ""
+                
+                self.isLoggedIn = true
+                self.checkIfLoggedIn()
+                
+                //self.emailField.text = ""
+                
+                
+                // Hooray! Let them use the app now.
+            } else {
+                let errorString = error.userInfo?["error"] as NSString
+                // Show the errorString somewhere and let the user try again.
+            }
+        }
+        
+        
+        
+    }
+    
     
     var isLoggedIn: Bool{
         
@@ -73,7 +164,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-}
+}//end
 
 
 
