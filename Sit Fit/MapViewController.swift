@@ -9,8 +9,12 @@
 import UIKit
 import MapKit
 
+class MyPointAnnotation: MKPointAnnotation {
+    
+    var index: Int = 0
+}
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     
     
@@ -20,6 +24,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myMapView.delegate = self
 
         }
     
@@ -42,7 +47,7 @@ class MapViewController: UIViewController {
     
     func createAnnotationsWithSeats(seats: [PFObject]) {
         
-        for seat in seats{
+        for (i,seat) in enumerate(seats){
             
             let venue = seat["venue"] as [String:AnyObject]
             let locationInfo = venue["location"] as [String:AnyObject]
@@ -51,7 +56,8 @@ class MapViewController: UIViewController {
             let lng = locationInfo["lng"] as CLLocationDegrees
             
             let coordinate = CLLocationCoordinate2DMake(lat,lng)
-            let annotation = MKPointAnnotation()
+            let annotation = MyPointAnnotation()
+            annotation.index = i
             annotation.setCoordinate(coordinate)
             annotation.title = seat["name"] as String
             myMapView.addAnnotation(annotation)
@@ -60,7 +66,48 @@ class MapViewController: UIViewController {
             
             
         }
+        
+        
+        
+        
     }
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        var annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnn")
+        
+        var rightArrowButton = ArrowButton(frame:CGRectMake(0, 0, 22, 22))
+        
+        rightArrowButton.strokeSize = 2
+        rightArrowButton.leftInset = 8
+        rightArrowButton.rightInset = 8
+        rightArrowButton.topInset = 5
+        rightArrowButton.bottomInset = 5
+        
+        
+        annotationView.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
+        
+        annotationView.canShowCallout = true
+        
+        return annotationView
+        
+        
+    }
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!){
+        
+        
+        let index = (view.annotation as MyPointAnnotation).index
+        
+        FeedData.mainData().selectedSeat = FeedData.mainData().feedItems[index]
+        
+        
+        var detailVC = storyboard?.instantiateViewControllerWithIdentifier("seatDetailVC") as UIViewController
+        navigationController?.pushViewController(detailVC, animated: true)
+        
+        
+    }
+    
+    
     
     
 
